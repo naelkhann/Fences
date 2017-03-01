@@ -1,7 +1,7 @@
 require 'rack'
-require_relative '../lib/controller_base'
+require_relative '../lib/fences_controller'
 
-class MyController < ControllerBase
+class MyController < FencesController
   def go
     if @req.path == "/heroes"
       render_content("Heroes controller rendered this view!", "text/html")

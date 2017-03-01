@@ -4,7 +4,7 @@ require 'active_support/inflector'
 require 'erb'
 require_relative './session'
 
-class ControllerBase
+class FencesController
   attr_reader :req, :res, :params
   attr_accessor :already_built_response
 

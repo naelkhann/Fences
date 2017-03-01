@@ -1,7 +1,7 @@
 require 'rack'
-require_relative '../lib/controller_base'
+require_relative '../lib/fences_controller'
 
-class MyController < ControllerBase
+class MyController < FencesController
   def go
     render :show
   end
