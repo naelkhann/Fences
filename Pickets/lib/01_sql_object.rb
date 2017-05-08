@@ -97,15 +97,15 @@ class SQLObject
   def insert
     col_names = self.class.columns.join(",")
 
-    question_marks = ["?"] * attribute_values.length
-    question_marks = question_marks.join(",")
+    spaces = ["?"] * attribute_values.length
+    spaces = spaces.join(",")
     table_name = self.class.table_name
     values = attribute_values
     DBConnection.execute(<<-SQL, values)
       INSERT INTO
         #{table_name} (#{col_names})
       VALUES
-        (#{question_marks})
+        (#{spaces})
     SQL
     self.id = DBConnection.last_insert_row_id
   end
