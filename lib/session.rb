@@ -3,7 +3,7 @@ require 'json'
 class Session
 
   def initialize(req)
-    @cookie = req.cookies["_rails_lite_app"]
+    @cookie = req.cookies["fences"]
     if @cookie
       @cookie_json = JSON.parse(@cookie)
     else
@@ -21,6 +21,6 @@ class Session
 
   def store_session(res)
     cookie_attributes = {path: "/", value: @cookie_json.to_json}
-    res.set_cookie("_rails_lite_app", cookie_attributes)
+    res.set_cookie("fences", cookie_attributes)
   end
 end
